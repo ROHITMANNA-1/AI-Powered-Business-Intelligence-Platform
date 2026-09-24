@@ -35,7 +35,7 @@ Copy-Item .env.example .env
 streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit. API keys are optional for the initial scaffold and must only be provided through `.env` or Streamlit secrets.
+Open the local application at [AI Analyst](http://localhost:8504/) after Streamlit starts. This link works only on the machine running the app; it is not a public deployment. API keys are optional for the initial scaffold and must only be provided through `.env` or Streamlit secrets.
 
 ## Implemented modules
 
