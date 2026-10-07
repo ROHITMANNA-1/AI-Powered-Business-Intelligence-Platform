@@ -1,4 +1,3 @@
-"""Grounded analyst responses built from validated query results."""
 
 from __future__ import annotations
 
@@ -13,7 +12,6 @@ from .schema import canonicalize_dataframe
 
 
 def answer_question(question: str, dataframe: pd.DataFrame) -> dict[str, object]:
-    """Return SQL, measured results, and a non-causal explanation."""
     dataframe, schema = canonicalize_dataframe(dataframe)
     llm_used = False
     if llm_is_configured():
@@ -33,7 +31,6 @@ def answer_question(question: str, dataframe: pd.DataFrame) -> dict[str, object]
 
 
 def generate_sql_with_llm(question: str, columns: list[str], table_name: str = "analysis_data") -> str:
-    """Ask the configured model for SQL, then let the validator decide whether it is usable."""
     from openai import OpenAI
 
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
